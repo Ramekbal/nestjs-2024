@@ -1,5 +1,5 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
-import { console } from 'inspector';
+import { CreateMessageDto } from './dtos/create-message.dto';
 
 @Controller('messages')
 export class MassagesController {
@@ -9,7 +9,7 @@ export class MassagesController {
     }
 
     @Post()
-    createMessage(@Body() body:any) {
+    createMessage(@Body() body: CreateMessageDto) {
         console.log(body);
         
     }

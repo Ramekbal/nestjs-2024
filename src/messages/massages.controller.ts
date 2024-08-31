@@ -1,4 +1,5 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { console } from 'inspector';
 
 @Controller('messages')
 export class MassagesController {
@@ -8,12 +9,14 @@ export class MassagesController {
     }
 
     @Post()
-    createMessage() {
+    createMessage(@Body() body:any) {
+        console.log(body);
         
     }
 
     @Get('/:id')
-    getMessage() {
+    getMessage(@Param('id') id:string) {
+        console.log(id);
         // return one massage
     }
 }
